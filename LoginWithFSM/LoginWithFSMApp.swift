@@ -11,7 +11,7 @@ import SwiftUI
 struct LoginWithFSMApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView(viewModel: LoginViewModel(fsm: LoginFSM()))
         }
     }
 }

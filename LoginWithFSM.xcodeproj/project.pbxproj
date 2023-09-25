@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		69C9DA3D2AC0A18B0029216F /* LoginWithFSMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA3C2AC0A18B0029216F /* LoginWithFSMApp.swift */; };
-		69C9DA3F2AC0A18B0029216F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA3E2AC0A18B0029216F /* ContentView.swift */; };
+		69C9DA3F2AC0A18B0029216F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA3E2AC0A18B0029216F /* LoginView.swift */; };
 		69C9DA412AC0A18D0029216F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C9DA402AC0A18D0029216F /* Assets.xcassets */; };
 		69C9DA442AC0A18D0029216F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C9DA432AC0A18D0029216F /* Preview Assets.xcassets */; };
 		69C9DA4E2AC0A18D0029216F /* LoginWithFSMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA4D2AC0A18D0029216F /* LoginWithFSMTests.swift */; };
 		69C9DA582AC0A18D0029216F /* LoginWithFSMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA572AC0A18D0029216F /* LoginWithFSMUITests.swift */; };
 		69C9DA5A2AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA592AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift */; };
+		69C9DA672AC0A19F0029216F /* LoginFSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA662AC0A19F0029216F /* LoginFSM.swift */; };
+		69C9DA692AC0A1FC0029216F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA682AC0A1FC0029216F /* LoginViewModel.swift */; };
+		69C9DA6B2AC0CBFC0029216F /* DefaultPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA6A2AC0CBFC0029216F /* DefaultPrimaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		69C9DA392AC0A18B0029216F /* LoginWithFSM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginWithFSM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C9DA3C2AC0A18B0029216F /* LoginWithFSMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithFSMApp.swift; sourceTree = "<group>"; };
-		69C9DA3E2AC0A18B0029216F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		69C9DA3E2AC0A18B0029216F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		69C9DA402AC0A18D0029216F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69C9DA432AC0A18D0029216F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		69C9DA492AC0A18D0029216F /* LoginWithFSMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginWithFSMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,9 @@
 		69C9DA532AC0A18D0029216F /* LoginWithFSMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginWithFSMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C9DA572AC0A18D0029216F /* LoginWithFSMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithFSMUITests.swift; sourceTree = "<group>"; };
 		69C9DA592AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithFSMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69C9DA662AC0A19F0029216F /* LoginFSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFSM.swift; sourceTree = "<group>"; };
+		69C9DA682AC0A1FC0029216F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		69C9DA6A2AC0CBFC0029216F /* DefaultPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPrimaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,10 @@
 		69C9DA3B2AC0A18B0029216F /* LoginWithFSM */ = {
 			isa = PBXGroup;
 			children = (
+				69C9DA6C2AC0CCA30029216F /* Views */,
+				69C9DA682AC0A1FC0029216F /* LoginViewModel.swift */,
+				69C9DA662AC0A19F0029216F /* LoginFSM.swift */,
 				69C9DA3C2AC0A18B0029216F /* LoginWithFSMApp.swift */,
-				69C9DA3E2AC0A18B0029216F /* ContentView.swift */,
 				69C9DA402AC0A18D0029216F /* Assets.xcassets */,
 				69C9DA422AC0A18D0029216F /* Preview Content */,
 			);
@@ -125,6 +133,15 @@
 				69C9DA592AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift */,
 			);
 			path = LoginWithFSMUITests;
+			sourceTree = "<group>";
+		};
+		69C9DA6C2AC0CCA30029216F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69C9DA6A2AC0CBFC0029216F /* DefaultPrimaryButton.swift */,
+				69C9DA3E2AC0A18B0029216F /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69C9DA3F2AC0A18B0029216F /* ContentView.swift in Sources */,
+				69C9DA692AC0A1FC0029216F /* LoginViewModel.swift in Sources */,
+				69C9DA6B2AC0CBFC0029216F /* DefaultPrimaryButton.swift in Sources */,
+				69C9DA3F2AC0A18B0029216F /* LoginView.swift in Sources */,
+				69C9DA672AC0A19F0029216F /* LoginFSM.swift in Sources */,
 				69C9DA3D2AC0A18B0029216F /* LoginWithFSMApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
