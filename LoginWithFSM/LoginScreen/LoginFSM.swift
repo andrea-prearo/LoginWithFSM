@@ -102,7 +102,11 @@ class LoginFSM: ObservableObject {
             break
         case .authenticate:
             state = .authenticating
-            // Make network call
+            // Simulate network call
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+                guard let self else { return }
+                self.state = .authenticated
+            }
         }
         return false
     }
