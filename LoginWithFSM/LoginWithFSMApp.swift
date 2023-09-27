@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct LoginWithFSMApp: App {
+    @State private var isUserLoggedIn = false
+
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: LoginViewModel(fsm: LoginFSM()))
+            LandingView()
+                .isUserLoggedIn($isUserLoggedIn)
         }
     }
 }

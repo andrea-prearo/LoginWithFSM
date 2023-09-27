@@ -99,7 +99,6 @@ class LoginFSM: ObservableObject {
                     state = .validatingCredentials
                 }
             }
-            break
         case .authenticate:
             state = .authenticating
             // Simulate network call

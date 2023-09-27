@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
+    @Environment(\.isUserLoggedIn) private var isUserLoggedIn
+
     @ObservedObject private var viewModel: LoginViewModel
     
     init(viewModel: LoginViewModel) {
@@ -25,21 +27,26 @@ struct LoginView: View {
             set: {_ in }
         )
 
-        VStack {
-            GroupBox {
-                TextField("Username", text: $viewModel.username)
-                    .textFieldStyle(.roundedBorder)
-                SecureField("Password", text: $viewModel.password)
-                    .textFieldStyle(.roundedBorder)
-                Button("Sign In") {
-                    viewModel.authenticate()
+        NavigationView {
+            VStack {
+                GroupBox {
+                    TextField("Username", text: $viewModel.username)
+                        .textFieldStyle(.roundedBorder)
+                    SecureField("Password", text: $viewModel.password)
+                        .textFieldStyle(.roundedBorder)
+                    Button("Sign In") {
+                        viewModel.authenticate()
+                    }
+                    .buttonStyle(DefaultPrimaryButtonStyle(disabled: isSignInButtonDisabled()))
                 }
-                .buttonStyle(DefaultPrimaryButtonStyle(disabled: isSignInButtonDisabled()))
-            }
-            .padding(.horizontal)
-            .fullScreenCover(isPresented: $viewModel.isLoading) {
-                ProgressView()
-                    .background(BackgroundBlurView())
+                .padding(.horizontal)
+                .navigationDestination(for: Bool.self) { _ in
+                    HomeView()
+                }
+                .fullScreenCover(isPresented: $viewModel.isLoading) {
+                    ProgressView()
+                        .background(BackgroundBlurView())
+                }
             }
         }
         .alert(isPresented: viewModelErroBinding) {
@@ -48,6 +55,9 @@ struct LoginView: View {
                 message: Text(viewModel.error?.localizedDescription ?? "Unknown error"),
                 dismissButton: .default(Text("OK"))
             )
+        }
+        .onChange(of: viewModel.isAuthenticated) { isAuthenticated in
+            isUserLoggedIn.wrappedValue = isAuthenticated
         }
         .padding()
     }
