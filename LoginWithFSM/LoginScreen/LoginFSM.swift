@@ -18,7 +18,7 @@ enum LoginCredential {
 }
 
 enum LoginEvent {
-    case validateCredential(LoginCredential)
+    case enteringCredential(LoginCredential)
     case authenticate
 }
 
@@ -32,7 +32,7 @@ enum LoginState: Equatable {
 
     func canProcessEvent(event: LoginEvent) -> Bool {
         switch event {
-        case .validateCredential(_):
+        case .enteringCredential(_):
             return self == .idle ||
             self == .validatingCredentials ||
             self == .validCredentials
@@ -82,7 +82,7 @@ class LoginFSM: ObservableObject {
         }
 
         switch event {
-        case .validateCredential(let credential):
+        case .enteringCredential(let credential):
             switch credential {
             case .username(let value):
                 hasValidUsername = validateUsername(value)
@@ -102,6 +102,8 @@ class LoginFSM: ObservableObject {
         case .authenticate:
             state = .authenticating
             // Simulate network call
+            // since we're not using a real
+            // authentication service
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
                 guard let self else { return }
                 self.state = .authenticated
@@ -111,10 +113,14 @@ class LoginFSM: ObservableObject {
     }
 
     private func validateUsername(_ value: String) -> Bool {
+        // Way too simple `username` validation
+        // for illustration purposes only
         return value.count >= 8
     }
 
     private func validatePassword(_ value: String) -> Bool {
+        // Way too simple `password` validation
+        // for illustration purposes only
         return value.count >= 8
     }
 }
