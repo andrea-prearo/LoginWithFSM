@@ -7,9 +7,20 @@
 
 import Foundation
 
-enum LoginError: Error {
+enum LoginError: Error, Equatable {
     case invalidCredentials
     case networkError(Error)
+
+    static func == (lhs: LoginError, rhs: LoginError) -> Bool {
+        switch (lhs, rhs) {
+        case (.invalidCredentials, .invalidCredentials):
+            return true
+        case (.networkError(_), .networkError(_)):
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 enum LoginCredential {
@@ -20,6 +31,7 @@ enum LoginCredential {
 enum LoginEvent {
     case enteringCredential(LoginCredential)
     case authenticate
+    case ackError
 }
 
 enum LoginState: Equatable {
@@ -38,6 +50,12 @@ enum LoginState: Equatable {
             self == .validCredentials
         case .authenticate:
             return self == .validCredentials
+        case .ackError:
+            if case .error(_) = self {
+                return true
+            } else {
+                return false
+            }
         }
     }
 
@@ -108,6 +126,8 @@ class LoginFSM: ObservableObject {
                 guard let self else { return }
                 self.state = .authenticated
             }
+        case .ackError:
+            state = .validCredentials
         }
         return false
     }

@@ -28,6 +28,10 @@ class LoginViewModel: ObservableObject {
         fsm.processEvent(.authenticate)
     }
 
+    func ackError() {
+        fsm.processEvent(.ackError)
+    }
+
     private func setupSubscriptions() {
         $username.sink { [weak self] value in
             guard let self else { return }

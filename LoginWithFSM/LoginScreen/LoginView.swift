@@ -11,6 +11,7 @@ struct LoginView: View {
     @Environment(\.isUserLoggedIn) private var isUserLoggedIn
 
     @ObservedObject private var viewModel: LoginViewModel
+    @State private var shouldShowError: Bool = false
     
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -22,11 +23,6 @@ struct LoginView: View {
     }
 
     var body: some View {
-        let viewModelErroBinding = Binding(
-            get: { self.viewModel.error != nil },
-            set: {_ in }
-        )
-
         NavigationView {
             VStack {
                 GroupBox {
@@ -49,15 +45,24 @@ struct LoginView: View {
                 }
             }
         }
-        .alert(isPresented: viewModelErroBinding) {
+        .alert(isPresented: $shouldShowError) {
             Alert(
                 title: Text("Error"),
                 message: Text(viewModel.error?.localizedDescription ?? "Unknown error"),
-                dismissButton: .default(Text("OK"))
+                dismissButton: .default(Text("OK")) {
+                    viewModel.ackError()
+                }
             )
         }
         .onChange(of: viewModel.isAuthenticated) { isAuthenticated in
             isUserLoggedIn.wrappedValue = isAuthenticated
+        }
+        .onChange(of: viewModel.error) { error in
+            // Make sure the full screen spinner is
+            // dismissed before showing the alert.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                shouldShowError = (error != nil) && !viewModel.isLoading
+            }
         }
         .padding()
     }
