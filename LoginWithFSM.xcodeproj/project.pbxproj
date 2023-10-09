@@ -12,7 +12,6 @@
 		69C9DA3F2AC0A18B0029216F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA3E2AC0A18B0029216F /* LoginView.swift */; };
 		69C9DA412AC0A18D0029216F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C9DA402AC0A18D0029216F /* Assets.xcassets */; };
 		69C9DA442AC0A18D0029216F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C9DA432AC0A18D0029216F /* Preview Assets.xcassets */; };
-		69C9DA4E2AC0A18D0029216F /* LoginWithFSMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA4D2AC0A18D0029216F /* LoginWithFSMTests.swift */; };
 		69C9DA582AC0A18D0029216F /* LoginWithFSMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA572AC0A18D0029216F /* LoginWithFSMUITests.swift */; };
 		69C9DA5A2AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA592AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift */; };
 		69C9DA672AC0A19F0029216F /* LoginFSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9DA662AC0A19F0029216F /* LoginFSM.swift */; };
@@ -21,6 +20,8 @@
 		69D7A9D42AC319D500FA17D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D7A9D32AC319D500FA17D8 /* HomeView.swift */; };
 		69D7AA0F2AC3D03A00FA17D8 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D7AA0E2AC3D03A00FA17D8 /* LandingView.swift */; };
 		69D7AA112AC3D15100FA17D8 /* isUserLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D7AA102AC3D15100FA17D8 /* isUserLoggedIn.swift */; };
+		69D83FC12AD3861800359F0C /* LoginFSMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D83FC02AD3861800359F0C /* LoginFSMTests.swift */; };
+		69D83FC72AD392F600359F0C /* LoginScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D83FC62AD392F600359F0C /* LoginScreenTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,6 @@
 		69C9DA402AC0A18D0029216F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69C9DA432AC0A18D0029216F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		69C9DA492AC0A18D0029216F /* LoginWithFSMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginWithFSMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69C9DA4D2AC0A18D0029216F /* LoginWithFSMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithFSMTests.swift; sourceTree = "<group>"; };
 		69C9DA532AC0A18D0029216F /* LoginWithFSMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginWithFSMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C9DA572AC0A18D0029216F /* LoginWithFSMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithFSMUITests.swift; sourceTree = "<group>"; };
 		69C9DA592AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithFSMUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 		69D7A9D32AC319D500FA17D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		69D7AA0E2AC3D03A00FA17D8 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		69D7AA102AC3D15100FA17D8 /* isUserLoggedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isUserLoggedIn.swift; sourceTree = "<group>"; };
+		69D83FC02AD3861800359F0C /* LoginFSMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFSMTests.swift; sourceTree = "<group>"; };
+		69D83FC62AD392F600359F0C /* LoginScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,7 @@
 		69C9DA4C2AC0A18D0029216F /* LoginWithFSMTests */ = {
 			isa = PBXGroup;
 			children = (
-				69C9DA4D2AC0A18D0029216F /* LoginWithFSMTests.swift */,
+				69D83FBF2AD385FE00359F0C /* LoginScreen */,
 			);
 			path = LoginWithFSMTests;
 			sourceTree = "<group>";
@@ -139,6 +141,7 @@
 		69C9DA562AC0A18D0029216F /* LoginWithFSMUITests */ = {
 			isa = PBXGroup;
 			children = (
+				69D83FC52AD392DB00359F0C /* LoginScreen */,
 				69C9DA572AC0A18D0029216F /* LoginWithFSMUITests.swift */,
 				69C9DA592AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift */,
 			);
@@ -186,6 +189,22 @@
 				69D7AA102AC3D15100FA17D8 /* isUserLoggedIn.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		69D83FBF2AD385FE00359F0C /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				69D83FC02AD3861800359F0C /* LoginFSMTests.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		69D83FC52AD392DB00359F0C /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				69D83FC62AD392F600359F0C /* LoginScreenTests.swift */,
+			);
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +278,7 @@
 					};
 					69C9DA482AC0A18D0029216F = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = 69C9DA382AC0A18B0029216F;
 					};
 					69C9DA522AC0A18D0029216F = {
@@ -334,7 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69C9DA4E2AC0A18D0029216F /* LoginWithFSMTests.swift in Sources */,
+				69D83FC12AD3861800359F0C /* LoginFSMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D83FC72AD392F600359F0C /* LoginScreenTests.swift in Sources */,
 				69C9DA582AC0A18D0029216F /* LoginWithFSMUITests.swift in Sources */,
 				69C9DA5A2AC0A18D0029216F /* LoginWithFSMUITestsLaunchTests.swift in Sources */,
 			);
@@ -542,6 +563,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5BZJ5S7SH7;
@@ -551,6 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aprearo.LoginWithFSMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginWithFSM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LoginWithFSM";
@@ -562,6 +585,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5BZJ5S7SH7;

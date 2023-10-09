@@ -122,14 +122,16 @@ class LoginFSM: ObservableObject {
             // Simulate network call
             // since we're not using a real
             // authentication service
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 2.0) { [weak self] in
                 guard let self else { return }
-                self.state = .authenticated
+                DispatchQueue.main.async {
+                    self.state = .authenticated
+                }
             }
         case .ackError:
             state = .validCredentials
         }
-        return false
+        return true
     }
 
     private func validateUsername(_ value: String) -> Bool {
